@@ -1,0 +1,64 @@
+// footer
+#footer {
+  position: relative;
+  z-index: 1;
+  .inner {
+    width: 100%;
+    height: 100%;
+    padding-left: 8em;
+    padding-right: 8em;
+    padding-top: 1.7em;
+    padding-bottom: 2em;
+  }
+  .group-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-area {
+    .title {
+      margin-bottom: 0.5em;
+      font-family: Voyage,sans-serif;
+      font-size: 3.9em;
+      font-weight: 400;
+      line-height: 1;
+      color: #fff6f2;
+    }
+
+    &:nth-child(2) {
+      .nav-list {
+        align-items: flex-end;
+      }
+    }
+  }
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-item {
+    margin-top: 0.8em;
+    font-size: 1.2em;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: color .4s;
+    &:hover {
+      color: #ec8383;
+    }
+  }
+  .link-nav {
+    position: relative;
+    display: block;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    transition: top 1s cubic-bezier(.25, .46, .45, .94);
+  }
+  .copyright {
+    font-family: 'Gt eesti text',sans-serif;
+    font-size: 1.1em;
+    text-align: center;
+    opacity: .8;
+    a {
+      display: block;
+    }
+  }
+}

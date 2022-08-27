@@ -127,3 +127,48 @@ body {
   font-weight: 300;
   color: #fff6f2;
 }
+
+.headline-area-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10em;
+  padding-bottom: 10em;
+
+  .title-area {
+    text-align: center;
+  }
+  .sc-title {
+    position: relative;
+    z-index: 1;
+    font-family: 'Gt eesti text',sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: .1em;
+    color: rgba(237,220,212,.89);
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: opacity 1s,top 1s cubic-bezier(.25, .46, .45, .94);
+  }
+  .sc-sub-title {
+    margin-top: 2em;
+    overflow: hidden;
+    h3 {
+      display: flex;
+      margin-bottom: -0.25em;
+      padding-bottom: 0.2em;
+      overflow: hidden;
+      font-family: Voyage,sans-serif;
+      font-size: 5.3em;
+      font-weight: 200;
+      line-height: 1;
+    }
+    span {
+      padding-right: 0.1em;
+      padding-left: 0.1em;
+    }
+  }
+}

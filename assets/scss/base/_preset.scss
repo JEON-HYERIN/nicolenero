@@ -78,3 +78,18 @@ div[class*="inner"] {
   position: absolute;
   opacity: 0;
 }
+
+span {
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+}
+
+.bg-texture {
+  background-image: linear-gradient(180deg,rgba(23,22,22,.89),rgba(23,22,22,.89)),url("../images/bg/bg_texture.jpg");
+  background-position: 0 0,50% 50%;
+  background-size: auto,cover;
+  background-attachment: scroll,fixed;
+}

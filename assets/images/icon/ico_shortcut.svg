@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>→</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.853742 0 0 0 0 0.467557 0 0 0 0 0.467557 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/arrow" transform="translate(-238.920527, -15.000000)" filter="url(#filter-1)">
+            <g transform="translate(233.820092, 8.981111)">
+                <polygon id="→" stroke="#0F1013" fill="#0F1013" fill-rule="nonzero" transform="translate(18.730486, 18.572980) rotate(-44.000000) translate(-18.730486, -18.572980) " points="19.6155736 28.57298 35.1120375 18.598954 19.6155736 8.57298001 19.5112203 9.4560969 32.1379687 18.0275255 2.34893413 17.0401327 3.20153192 21.3209437 32.1379687 19.1184346 19.5112203 27.7418112"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

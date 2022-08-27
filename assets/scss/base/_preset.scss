@@ -1,3 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+  
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+::selection {
+  background: #1F1F1F;
+  color: #DA7777;
+  text-shadow: none;
+}
+
 #wrapper {
 
 }
@@ -51,16 +74,7 @@ div[class*="inner"] {
 
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #FF0000;
-}
-
-::selection {
-  background: #1F1F1F;
-  color: #DA7777;
-  text-shadow: none;
+.abs {
+  position: absolute;
+  opacity: 0;
 }

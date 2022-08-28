@@ -128,16 +128,20 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #171616;
-  background-image: linear-gradient(180deg, rgba(23, 22, 22, .89), rgba(23, 22, 22, .89)), url("../images/bg/body_bg.jpg");
-  background-position: 0 0, 50% 50%;
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
-  background-attachment: scroll, fixed;
-  font-family: 'Gt eesti text', sans-serif;
-  font-size: 1vw;
+  background: {
+    color: #171616;
+    image: linear-gradient(180deg, rgba(23, 22, 22, .89), rgba(23, 22, 22, .89)), url("../images/bg/body_bg.jpg");
+    position: 0 0, 50% 50%;
+    size: auto, cover;
+    repeat: repeat, no-repeat;
+    attachment: scroll, fixed;
+  }
+  font: {
+    family: 'Gt eesti text', sans-serif;
+    size: 1vw;
+    weight: 300;
+  }
   line-height: 1.5;
-  font-weight: 300;
   color: #fff6f2;
 }
 
@@ -147,8 +151,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 10em;
-  padding-bottom: 10em;
+  padding: {
+    top: 10em;
+    bottom: 10em;
+  }
 
   .title-area {
     text-align: center;
@@ -157,9 +163,12 @@ body {
   .sc-title {
     position: relative;
     z-index: 1;
-    font-family: 'Gt eesti text', sans-serif;
-    font-size: 1.3em;
-    font-weight: 300;
+    overflow: hidden;
+    font: {
+      family: 'Gt eesti text', sans-serif;
+      size: 1.3em;
+      weight: 300;
+    }
     line-height: 1;
     letter-spacing: .1em;
     color: rgba(237, 220, 212, .89);
@@ -183,10 +192,12 @@ body {
       margin-bottom: -0.25em;
       padding-bottom: 0.2em;
       overflow: hidden;
-      font-family: Voyage, sans-serif;
-      font-size: 5.3em;
-      font-weight: 200;
       line-height: 1;
+      font: {
+        family: Voyage, sans-serif;
+        size: 5.3em;
+        weight: 200;
+      }
 
       @include desktop {
         padding-bottom: 0.2em;
@@ -198,8 +209,10 @@ body {
     }
 
     span {
-      padding-right: 0.1em;
-      padding-left: 0.1em;
+      padding: {
+        left: 0.1em;
+        right: 0.1em;
+      }
 
       @include mobile-small {
         font-size: 2.4em;

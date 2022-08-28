@@ -4,22 +4,52 @@
   overflow: hidden;
   margin-top: 0.5em;
   padding-right: 0.8em;
-  font-family: Voyage, sans-serif;
-  font-size: 4.4em;
+  font: {
+    family: Voyage, sans-serif;
+    size: 4.4em;
+  }
   line-height: 1;
   color: snow;
 
   @include mobile-large {
     display: flex;
     align-items: center;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding: {
+      top: 13px;
+      bottom: 13px;
+    }
   }
 
   @include mobile-small {
     padding-right: 0;
     justify-content: flex-start;
     font-size: 9.5em;
+  }
+
+  &:hover {
+    span {
+      transform: translateY(-1.2em) skew(30deg, -5deg);
+
+      &.abs {
+        transform: translateY(0);
+      }
+    }
+
+    .ico-shortcut {
+      transform: translate(1.2em, -1.2em);
+
+      &.abs {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  span {
+    transition: transform 1s;
+
+    &.abs {
+      transform: translateY(100%) skew(30deg, -5deg);
+    }
   }
 
   .ico-shortcut {
@@ -30,8 +60,11 @@
     bottom: 0;
     width: 0.6em;
     height: 0.6em;
-    background-image: url("../images/icon/ico_shortcut.svg");
-    background-size: cover;
+    background: {
+      image: url("../images/icon/ico_shortcut.svg");
+      size: cover;
+    }
+    transition: transform 1s;
 
     @include mobile-large {
       position: relative;
@@ -43,6 +76,10 @@
       @include mobile-large {
         display: none;
       }
+    }
+
+    &.abs {
+      transform: translate(-1em, 1em);
     }
   }
 }

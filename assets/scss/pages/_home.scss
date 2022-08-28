@@ -33,8 +33,10 @@
       top: auto;
       right: 0;
       bottom: 16%;
-      margin-right: auto;
-      margin-left: auto;
+      margin: {
+        right: auto;
+        left: auto;
+      }
       text-align: left;
       font-size: 1vw;
     }
@@ -43,10 +45,12 @@
   .title {
     position: relative;
     z-index: 1;
-    font-family: 'Gt eesti text', sans-serif;
-    font-size: 1.5em;
+    font: {
+      family: 'Gt eesti text', sans-serif;
+      size: 1.5em;
+      weight: 300;
+    }
     line-height: 1;
-    font-weight: 300;
     letter-spacing: .1em;
     text-transform: uppercase;
     overflow: hidden;
@@ -75,9 +79,11 @@
     margin-bottom: -28px;
     padding-bottom: 25px;
     overflow: hidden;
-    font-family: Voyage, sans-serif;
-    font-size: 9.5em;
-    font-weight: 200;
+    font: {
+      family: Voyage, sans-serif;
+      size: 9.5em;
+      weight: 200;
+    }
     line-height: 1;
 
     @include desktop {
@@ -108,13 +114,17 @@
   }
 
   .link-shortcut {
-    margin-right: 0.9em;
-    margin-left: 0.9em;
+    margin: {
+      left: 0.9em;
+      right: 0.9em;
+    }
     font-size: 2.3em;
 
     @include desktop {
-      margin-right: 1em;
-      margin-left: 1em;
+      margin: {
+        left: 1em;
+        right: 1em;
+      }
     }
 
     @include mobile-small {
@@ -231,14 +241,18 @@
   .title-box-wrap {
     .title {
       overflow: hidden;
-      margin-top: 0;
-      margin-bottom: -0.25em;
+      margin: {
+        top: 0;
+        bottom: -0.25em;
+      }
       padding-bottom: 0.2em;
-      font-family: Voyage, sans-serif;
-      font-size: 5.3em;
+      font: {
+        family: Voyage, sans-serif;
+        size: 5.3em;
+        weight: 200;
+      }
       line-height: 1;
-      font-weight: 200;
-      // opacity: 0;
+      opacity: 0;
       transition: opacity 1s;
 
       @include desktop {
@@ -267,8 +281,8 @@
     top: 25%;
     right: auto;
     bottom: auto;
-    z-index: 5;
     width: 42.9em;
+    z-index: 5;
 
     @include mobile-large {
       width: 47.9em;
@@ -297,8 +311,6 @@
       }
     }
   }
-
-  .gallery-area {}
 
   .gallery {
     position: absolute;
@@ -352,7 +364,7 @@
     &:nth-child(3) {
       left: auto;
       right: -4%;
-      z-index: 9999999;
+      z-index: 2;
       width: 21.7em;
 
       @include desktop {
@@ -444,7 +456,7 @@
     top: -13%;
     right: -29%;
     bottom: auto;
-    z-index: 998;
+    z-index: 2;
     width: 62.1em;
 
     &.circle1 {
@@ -454,8 +466,6 @@
       bottom: 2%;
       z-index: 0;
     }
-
-    &.circle2 {}
 
     @include mobile-small {
       display: none;
@@ -479,6 +489,12 @@
       -webkit-transform: rotate(137deg);
       -ms-transform: rotate(137deg);
       transform: rotate(137deg);
+      transition: .3s;
+
+      &.fadeout {
+        will-change: opacity;
+        opacity: 0;
+      }
 
       @include desktop {
         width: 39px;
@@ -569,8 +585,10 @@
 
       @include desktop {
         width: 100%;
-        padding-right: 5.9em;
-        padding-left: 5.9em;
+        padding: {
+          left: 5.9em;
+          right: 5.9em;
+        }
       }
 
       @include mobile-large {
@@ -595,9 +613,11 @@
 
       .num {
         overflow: hidden;
-        font-family: Voyage, sans-serif;
+        font: {
+          family: Voyage, sans-serif;
+          size: 1.5em;
+        }
         color: #e08686;
-        font-size: 1.5em;
         line-height: 1;
       }
 
@@ -606,9 +626,11 @@
         overflow: hidden;
 
         strong {
-          font-family: Voyage, sans-serif;
-          font-size: 3em;
-          font-weight: 400;
+          font: {
+            family: Voyage, sans-serif;
+            size: 3em;
+            weight: 400;
+          }
           line-height: 1;
         }
       }
@@ -619,8 +641,10 @@
         font-size: 1.1em;
 
         span {
-          font-family: 'Gt eesti text trial', sans-serif;
-          font-weight: 300;
+          font: {
+            family: 'Gt eesti text trial', sans-serif;
+            weight: 300;
+          }
 
           @include desktop {
             display: inline;
@@ -661,18 +685,24 @@
 
   .story-list {
     position: relative;
-    padding-top: 20em;
-    padding-bottom: 20em;
+    padding: {
+      top: 20em;
+      bottom: 20em;
+    }
 
     @include desktop {
       height: 100%;
-      padding-top: 30.5em;
-      padding-bottom: 30.5em;
+      padding: {
+        top: 30.5em;
+        bottom: 30.5em;
+      }
     }
 
     @include mobile-large {
-      padding-top: 38em;
-      padding-bottom: 38em;
+      padding: {
+        top: 38em;
+        bottom: 38em;
+      }
     }
 
     @include mobile-small {
@@ -682,8 +712,10 @@
       width: 100%;
       height: auto;
       margin-top: 7px;
-      padding-top: 78.1em;
-      padding-bottom: 78.1em;
+      padding: {
+        top: 78.1em;
+        bottom: 78.1em;
+      }
     }
   }
 
@@ -692,14 +724,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 4.9em;
-    padding-bottom: 4.9em;
+    padding: {
+      top: 4.9em;
+      bottom: 4.9em;
+    }
     opacity: .81;
 
     @include mobile-small {
       position: static;
-      padding-top: 17.3em;
-      padding-bottom: 17.3em;
+      padding: {
+        top: 17.3em;
+        bottom: 17.3em;
+      }
     }
 
     .thumb-box {
@@ -761,8 +797,10 @@
         position: absolute;
         bottom: -100%;
         width: 5.7em;
-        margin-right: auto;
-        margin-left: auto;
+        margin: {
+          left: auto;
+          right: auto;
+        }
         font-weight: 400;
       }
     }
@@ -772,8 +810,10 @@
       flex: 0 0 auto;
       padding-bottom: 0.2em;
       overflow: hidden;
-      font-family: Voyage, sans-serif;
-      font-size: 5.3em;
+      font: {
+        family: Voyage, sans-serif;
+        size: 5.3em;
+      }
       line-height: 1;
       text-align: center;
       transition: opacity .3s;
@@ -787,9 +827,11 @@
     .date {
       position: absolute;
       bottom: -1.3em;
-      font-family: 'Gt eesti text 2', sans-serif;
-      font-size: 1.5vw;
-      font-weight: 300;
+      font: {
+        family: 'Gt eesti text 2', sans-serif;
+        size: 1.5vw;
+        weight: 300;
+      }
       letter-spacing: 2px;
       color: #d86f6f;
 
@@ -808,8 +850,10 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-top: 10em;
-  padding-bottom: 10em;
+  padding: {
+    top: 10em;
+    bottom: 10em;
+  }
 
   @include desktop {
     min-height: 72.4em;
@@ -828,8 +872,10 @@
     flex: 1;
     width: 95vw;
     height: 100%;
-    margin-right: auto;
-    margin-left: auto;
+    margin: {
+      left: auto;
+      right: auto;
+    }
     padding: 0 2em;
     z-index: 1;
 
@@ -838,14 +884,18 @@
     }
 
     @include mobile-large {
-      padding-right: 0;
-      padding-left: 0;
+      padding: {
+        left: 0;
+        right: 0;
+      }
     }
 
     @include mobile-small {
       width: 100vw;
-      padding-right: 5vw;
-      padding-left: 5vw;
+      padding: {
+        left: 5vw;
+        right: 5vw;
+      }
     }
   }
 
@@ -872,16 +922,20 @@
   }
 
   .info-box {
-    padding-top: 5em;
-    padding-bottom: 5em;
+    padding: {
+      top: 5em;
+      bottom: 5em;
+    }
 
     @include desktop {
       font-size: .8vw;
     }
 
     @include mobile-large {
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: {
+        top: 0;
+        bottom: 0;
+      }
     }
 
     @include mobile-small {
@@ -897,15 +951,21 @@
 
     h3 {
       .row {
-        display: inline-block;
-        padding-right: 0.1em;
-        padding-left: 0.1em;
-        padding-bottom: 0.2em;
-        margin-top: 0;
-        margin-bottom: -0.25em;
-        font-family: Voyage, sans-serif;
-        font-size: 4.6em;
-        font-weight: 200;
+        display: block;
+        padding: {
+          left: 0.1em;
+          right: 0.1em;
+          bottom: 0.2em;
+        }
+        margin: {
+          top: 0;
+          bottom: -0.25em;
+        }
+        font: {
+          family: Voyage, sans-serif;
+          size: 4.6em;
+          weight: 200;
+        }
         line-height: 1;
         overflow: hidden;
 
@@ -923,10 +983,14 @@
         }
 
         &:nth-child(2) {
-          margin-top: -0.4em;
-          margin-bottom: -0.35em;
-          padding-top: 0.1em;
-          padding-bottom: 0.5em;
+          margin: {
+            top: -0.4em;
+            bottom: -0.35em;
+          }
+          padding: {
+            top: 0.1em;
+            bottom: 0.5em;
+          }
 
           @include desktop {
             margin-top: -0.35em;
@@ -937,8 +1001,10 @@
   }
 
   .desc {
-    margin-top: 0;
-    margin-bottom: 0.8em;
+    margin: {
+      top: 0;
+      bottom: 0.8em;
+    }
     opacity: .8;
     font-size: 1.1em;
     line-height: 1.5;
@@ -954,12 +1020,10 @@
     @include mobile-small {
       font-size: 4.4em;
     }
-  }
 
-  .link-shortcut {
-    span {}
-
-    .ico-shortcut {}
+    em {
+      font-style: italic;
+    }
   }
 
   .thumb-wrap {
@@ -992,6 +1056,7 @@
       right: 0;
       bottom: 0;
       background-color: #171616;
+      transform: translate3d(-100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     }
   }
 
@@ -1082,8 +1147,10 @@
     padding: 10em 5em 10em 0.3em;
 
     @include mobile-large {
-      padding-top: 23.9em;
-      padding-bottom: 23.9em;
+      padding: {
+        top: 23.9em;
+        bottom: 23.9em;
+      }
     }
 
     @include mobile-small {
@@ -1094,8 +1161,10 @@
   .title {
     display: inline-block;
     max-width: 100%;
-    font-family: Voyage, sans-serif;
-    font-size: 12em;
+    font: {
+      family: Voyage, sans-serif;
+      size: 12em;
+    }
     color: #fff6f2;
     line-height: 1;
     position: relative;
@@ -1110,8 +1179,6 @@
     a {
       display: flex;
       flex-wrap: wrap;
-
-      span {}
     }
   }
 
@@ -1147,8 +1214,6 @@
       @include mobile-small {
         display: none;
       }
-
-      img {}
     }
 
     .circle {

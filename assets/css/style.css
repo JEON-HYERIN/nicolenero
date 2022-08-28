@@ -50,7 +50,7 @@ i[class^="ico-"], i[class*="ico-"] { display: inline-block; vertical-align: top;
 
 div[class*="inner"] { position: relative; margin: 0 auto; }
 
-.abs { position: absolute; left: 0; }
+.abs { position: absolute; opacity: 0; left: 0; }
 
 span, strong { display: inline-block; }
 
@@ -240,29 +240,26 @@ body { margin: 0; min-height: 100%; display: -webkit-box; display: -ms-flexbox; 
 
 .link-shortcut { display: inline-block; position: relative; overflow: hidden; margin-top: 0.5em; padding-right: 0.8em; font-family: Voyage, sans-serif; font-size: 4.4em; line-height: 1; color: snow; }
 
+@media (min-width: 768px) { .link-shortcut:hover span { -webkit-transform: translateY(-1.2em) skew(30deg, -5deg); transform: translateY(-1.2em) skew(30deg, -5deg); }
+  .link-shortcut:hover span.abs { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+  .link-shortcut:hover .ico-shortcut { -webkit-transform: translate(1.2em, -1.2em); transform: translate(1.2em, -1.2em); }
+  .link-shortcut:hover .ico-shortcut.abs { -webkit-transform: translate(0, 0); transform: translate(0, 0); opacity: 1; } }
+
 @media (max-width: 767px) { .link-shortcut { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-top: 13px; padding-bottom: 13px; } }
 
 @media (max-width: 479px) { .link-shortcut { padding-right: 0; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; font-size: 9.5em; } }
 
-.link-shortcut:hover span { -webkit-transform: translateY(-1.2em) skew(30deg, -5deg); transform: translateY(-1.2em) skew(30deg, -5deg); }
-
-.link-shortcut:hover span.abs { -webkit-transform: translateY(0); transform: translateY(0); }
-
-.link-shortcut:hover .ico-shortcut { -webkit-transform: translate(1.2em, -1.2em); transform: translate(1.2em, -1.2em); }
-
-.link-shortcut:hover .ico-shortcut.abs { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
-
-.link-shortcut span { -webkit-transition: -webkit-transform 1s; transition: -webkit-transform 1s; transition: transform 1s; transition: transform 1s, -webkit-transform 1s; }
-
 .link-shortcut span.abs { -webkit-transform: translateY(100%) skew(30deg, -5deg); transform: translateY(100%) skew(30deg, -5deg); }
 
-.link-shortcut .ico-shortcut { position: absolute; left: auto; top: auto; right: 0; bottom: 0; width: 0.6em; height: 0.6em; background-image: url("../images/icon/ico_shortcut.svg"); background-size: cover; -webkit-transition: -webkit-transform 1s; transition: -webkit-transform 1s; transition: transform 1s; transition: transform 1s, -webkit-transform 1s; }
+.link-shortcut .ico-shortcut { position: absolute; left: auto; top: auto; right: 0; bottom: 0; width: 0.6em; height: 0.6em; background-image: url("../images/icon/ico_shortcut.svg"); background-size: cover; }
 
 @media (max-width: 767px) { .link-shortcut .ico-shortcut { position: relative; bottom: auto; margin-left: 7px; } }
 
-@media (max-width: 767px) { .link-shortcut .ico-shortcut.abs { display: none; } }
-
 .link-shortcut .ico-shortcut.abs { -webkit-transform: translate(-1em, 1em); transform: translate(-1em, 1em); }
+
+.link-shortcut span, .link-shortcut .ico-shortcut { -webkit-transition: .8s; transition: .8s; }
+
+@media (max-width: 767px) { .link-shortcut span.abs, .link-shortcut .ico-shortcut.abs { display: none; } }
 
 .sc-visual { position: relative; height: 100vh; min-height: 600px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
 

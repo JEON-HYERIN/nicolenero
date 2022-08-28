@@ -11,6 +11,28 @@
   line-height: 1;
   color: snow;
 
+  @include tablet {
+    &:hover {
+      span {
+        transform: translateY(-1.2em) skew(30deg, -5deg);
+  
+        &.abs {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+  
+      .ico-shortcut {
+        transform: translate(1.2em, -1.2em);
+  
+        &.abs {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   @include mobile-large {
     display: flex;
     align-items: center;
@@ -26,27 +48,7 @@
     font-size: 9.5em;
   }
 
-  &:hover {
-    span {
-      transform: translateY(-1.2em) skew(30deg, -5deg);
-
-      &.abs {
-        transform: translateY(0);
-      }
-    }
-
-    .ico-shortcut {
-      transform: translate(1.2em, -1.2em);
-
-      &.abs {
-        transform: translate(0, 0);
-      }
-    }
-  }
-
   span {
-    transition: transform 1s;
-
     &.abs {
       transform: translateY(100%) skew(30deg, -5deg);
     }
@@ -64,7 +66,6 @@
       image: url("../images/icon/ico_shortcut.svg");
       size: cover;
     }
-    transition: transform 1s;
 
     @include mobile-large {
       position: relative;
@@ -73,13 +74,18 @@
     }
 
     &.abs {
+      transform: translate(-1em, 1em);
+    }
+  }
+
+  span,
+  .ico-shortcut {
+    transition: .8s;
+
+    &.abs {
       @include mobile-large {
         display: none;
       }
-    }
-
-    &.abs {
-      transform: translate(-1em, 1em);
     }
   }
 }

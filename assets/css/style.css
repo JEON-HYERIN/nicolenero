@@ -52,7 +52,7 @@ div[class*="inner"] { position: relative; margin: 0 auto; }
 
 .abs { position: absolute; left: 0; }
 
-span { display: inline-block; }
+span, strong { display: inline-block; }
 
 img { width: 100%; }
 

@@ -4,6 +4,7 @@ $(function(){
       e.preventDefault();
     });
 
+    // header
     $('.btn-nav').click(function(){
       $('#gnb').toggleClass('open');
       
@@ -29,36 +30,36 @@ $(function(){
     const visualTl1 = gsap.timeline({
       defaults: {
         delay: 0.2,
-        duration: 1.25
+        duration: 1
       },
       scrollTrigger:{
         trigger: '.sc-visual',
       },
     })
     visualTl1.addLabel('t1')
-    .fromTo('.sc-visual .bg img',{filter: 'saturate(0%)', transform: 'scale3d(1.05, 1.05, 1)'},{filter: 'saturate(100%)', transform: 'scale3d(1, 1, 1)'},'t1')
+    .fromTo('.sc-visual .bg img',{filter: 'saturate(0%)', transform: 'scale3d(1.05, 1.05, 1)'},{filter: 'saturate(100%)', transform: 'scale3d(1, 1, 1)', duration: 1.5},'t1')
     .fromTo('.sc-visual .title',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0,},'t1+=0.8')
     .fromTo('.sc-visual .desc span',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2},'t1+=1')
-    .fromTo('.sc-visual .link-shortcut',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2, delay: 1},'t1+=1.4')
+    .fromTo('.sc-visual .link-shortcut',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2},'t1+=2.4')
 
     // gallery
     $('.sc-gallery .title').each(function(index, element){
       const anim = gsap.fromTo(element,{
         // opacity: 0,
-        yPercent: 0
+        yPercent: -35
       }, {
         scrollTrigger: {
           trigger: element,
-          start: 'top 50%',
-          end: '+=80%',
-          scrub: 3,
+          start: 'top 70%',
+          end: '+=100%',
+          scrub: 1,
           toggleClass: {
             targets: element,
             className: 'fadein'
           }
         },
         // opacity: 1,
-        yPercent: 30,
+        yPercent: 35,
       });
     });
 
@@ -103,14 +104,13 @@ $(function(){
     });
     
     // plan
-
-
     gsap.fromTo('.sc-plan .title-area .ico-box', {
-      y: -165,
+      // y: -165,
+      y: 0
     }, {
       scrollTrigger:{
         trigger: '.sc-plan',
-        start:'-30% top',
+        start:'top top',
         end:'+=50%',
         // markers:true,
         scrub: 2,
@@ -135,7 +135,7 @@ $(function(){
       scrollTrigger:{
         trigger: '.sc-plan',
         start:'-30% top',
-        end:'+=50%',
+        end:'+=100%',
         // markers:true,
         toggleActions: 'restart none reverse none'
       },
@@ -149,14 +149,15 @@ $(function(){
         duration: .8
       },
       scrollTrigger:{
-        trigger: '.sc-plan .plan-item',
-        start:'top center',
+        trigger: '.sc-plan .plan-item .info-box-wrap',
+        start:'top 60%',
+        end:'+=100%',
         // markers:true,
         toggleActions: 'restart none reverse none'
       },
     })
     planListTl.addLabel('t1')
-    .fromTo('.sc-plan .plan-item .num',{yPercent: -120, opacity: 0},{yPercent: 0,opacity: 1},'t1')
-    .fromTo('.sc-plan .plan-item .title',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1},'t1')
+    .fromTo('.sc-plan .plan-item .num span',{yPercent: -120, opacity: 0},{yPercent: 0,opacity: 1},'t1')
+    .fromTo('.sc-plan .plan-item .title strong',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1},'t1')
     .fromTo('.sc-plan .plan-item .desc span',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1,stagger: 0.05},'t1')
 });

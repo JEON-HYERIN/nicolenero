@@ -8,49 +8,131 @@
   align-items: center;
   overflow: hidden;
 
+  @include desktop {
+    height: 60em;
+    min-height: 100vh;
+  }
+
+  @include mobile-large {
+    min-height: 300px;
+  }
+
+  @include mobile-small {
+    height: 100vh;
+    min-height: 500px;
+  }
+
   .group-title {
     position: absolute;
     z-index: 1;
     width: 90%;
     text-align: center;
+
+    @include mobile-small {
+      left: 0;
+      top: auto;
+      right: 0;
+      bottom: 16%;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: left;
+      font-size: 1vw;
+    }
   }
+
   .title {
     position: relative;
-    z-index: 15;
-    font-family: 'Gt eesti text',sans-serif;
+    z-index: 1;
+    font-family: 'Gt eesti text', sans-serif;
     font-size: 1.5em;
     line-height: 1;
     font-weight: 300;
     letter-spacing: .1em;
     text-transform: uppercase;
     overflow: hidden;
+
+    @include desktop {
+      font-size: 2em;
+    }
+
+    @include mobile-large {
+      font-size: 2.5em;
+    }
+
+    @include mobile-small {
+      margin-bottom: 5px;
+      font-size: 3em;
+    }
   }
+
+  .desc-area {
+    @include mobile-small {
+      font-size: 2vw;
+    }
+  }
+
   .desc {
     margin-bottom: -28px;
     padding-bottom: 25px;
     overflow: hidden;
-    font-family: Voyage,sans-serif;
+    font-family: Voyage, sans-serif;
     font-size: 9.5em;
     font-weight: 200;
     line-height: 1;
-    span {}
+
+    @include desktop {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    @include mobile-small {
+      margin-top: -0.1em;
+      font-size: 4.8em;
+      line-height: .9;
+    }
   }
+
   .shortcut-area {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 4.2em;
+
+    @include desktop {
+      font-size: 1.5vw;
+    }
+
+    @include mobile-small {
+      justify-content: flex-start;
+    }
   }
+
   .link-shortcut {
     margin-right: 0.9em;
     margin-left: 0.9em;
     font-size: 2.3em;
+
+    @include desktop {
+      margin-right: 1em;
+      margin-left: 1em;
+    }
+
+    @include mobile-small {
+      margin-left: 0;
+      font-size: 7em;
+
+      &:nth-child(2) {
+        display: none;
+      }
+    }
   }
+
   .bg-area {
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 100%;
+
     &::after {
       content: '';
       position: absolute;
@@ -59,7 +141,7 @@
       right: 0;
       bottom: -46px;
       height: 10em;
-      background-image: linear-gradient(180deg,rgba(27,27,27,0),#171616 58%);
+      background-image: linear-gradient(180deg, rgba(27, 27, 27, 0), #171616 58%);
     }
 
     .thumb-dim {
@@ -70,17 +152,27 @@
       bottom: 0;
       width: 100%;
       height: 100%;
-      background-image: radial-gradient(circle farthest-corner at 50% 50%,rgba(23,22,22,.54),rgba(23,22,22,.32));
+      background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(23, 22, 22, .54), rgba(23, 22, 22, .32));
     }
   }
+
   .bg {
     height: 100%;
+
+    @include mobile-small {
+      width: 100%;
+    }
+
     img {
       width: 105%;
       height: 105%;
       max-width: none;
       object-fit: cover;
       object-position: 50% 50%;
+
+      @include mobile-small {
+        object-position: 41% 50%;
+      }
     }
   }
 }
@@ -91,6 +183,11 @@
   flex-direction: column;
   height: auto;
   min-height: 100vh;
+
+  @include desktop {
+    overflow: hidden;
+    min-height: 50em;
+  }
 
   .inner {
     position: relative;
@@ -104,31 +201,66 @@
     height: 100%;
     padding: 4em 2em;
     overflow: hidden;
+
+    @include desktop {
+      padding: 40px 4vw;
+      flex: 0 0 auto;
+    }
+
+    @include mobile-small {
+      padding: 50px 7vw 0;
+    }
   }
+
   .float-wrap {
     position: relative;
     width: 100%;
     height: 90.1em;
     flex: 0 0 auto;
+
+    @include desktop {
+      height: 83.1em;
+    }
+
+    @include mobile-small {
+      height: auto;
+      margin-top: 100px;
+    }
   }
+
   .title-box-wrap {
     .title {
       overflow: hidden;
       margin-top: 0;
       margin-bottom: -0.25em;
       padding-bottom: 0.2em;
-      font-family: Voyage,sans-serif;
+      font-family: Voyage, sans-serif;
       font-size: 5.3em;
       line-height: 1;
       font-weight: 200;
       // opacity: 0;
       transition: opacity 1s;
 
+      @include desktop {
+        padding-bottom: 0.2em;
+        font-size: 6.1em;
+      }
+
+      @include mobile-small {
+        padding-bottom: 0.1em;
+        font-size: 9.7em;
+      }
+
       &.fadein {
         opacity: 1;
+
+        @include mobile-small {
+          font-size: 9.1em;
+        }
       }
     }
   }
+
   .title-box {
     position: absolute;
     left: 11%;
@@ -137,14 +269,37 @@
     bottom: auto;
     z-index: 5;
     width: 42.9em;
+
+    @include mobile-large {
+      width: 47.9em;
+    }
+
+    @include mobile-small {
+      left: 0;
+      top: -9%;
+      width: 100%;
+      text-align: center;
+    }
+
     &.bottom {
       left: auto;
       top: 63%;
       right: 3%;
       width: 56.1em;
+
+      @include mobile-large {
+        width: 63.5em;
+      }
+
+      @include mobile-small {
+        right: 0;
+        width: 100%;
+      }
     }
   }
+
   .gallery-area {}
+
   .gallery {
     position: absolute;
     left: 0;
@@ -155,43 +310,134 @@
     box-shadow: 0 10px 2em 0 RGB(0 0 0 / 50%);
     opacity: .59;
 
+    @include mobile-small {
+      position: relative;
+      left: auto;
+      top: auto;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
     &:nth-child(1) {
       left: -5%;
       width: 25.9em;
       margin-top: 14.7em;
       opacity: .64;
+
+      @include desktop {
+        margin-top: 7.6em;
+      }
+
+      @include mobile-large {
+        margin-top: 10.6em;
+      }
+
+      @include mobile-small {
+        left: auto;
+        width: 100%;
+      }
     }
+
     &:nth-child(2) {
       left: 21%;
       z-index: 2;
       width: 45.3em;
+
+      @include mobile-small {
+        left: auto;
+        width: 100%;
+      }
     }
+
     &:nth-child(3) {
       left: auto;
       right: -4%;
       z-index: 9999999;
       width: 21.7em;
+
+      @include desktop {
+        right: -2%;
+      }
+
+      @include mobile-small {
+        right: auto;
+        width: 100%;
+        display: none;
+      }
     }
+
     &:nth-child(4) {
       left: 4%;
-    z-index: 1;
-    width: 25.1em;
-    margin-top: 48em;
+      z-index: 1;
+      width: 25.1em;
+      margin-top: 48em;
+
+      @include desktop {
+        left: -3%;
+        top: -3%;
+        margin-top: 38.7em;
+      }
+
+      @include mobile-large {
+        top: -27%;
+        margin-top: 66.5em;
+      }
+
+      @include mobile-small {
+        left: auto;
+        top: auto;
+        display: block;
+        width: 100%;
+        margin-top: auto;
+      }
     }
+
     &:nth-child(5) {
       left: 35%;
       z-index: 2;
       width: 47.5em;
       margin-top: 49.8em;
+
+      @include desktop {
+        left: 27%;
+      }
+
+      @include mobile-large {
+        left: 31%;
+        top: -8%;
+      }
+
+      @include mobile-small {
+        left: auto;
+        width: 100%;
+        margin-top: auto;
+      }
     }
+
     &:nth-child(6) {
       left: auto;
       right: -7%;
       z-index: -1;
       width: 27.2em;
       margin-top: 43.3em;
+
+      @include desktop {
+        right: 0;
+      }
+
+      @include mobile-large {
+        top: 9%;
+        right: -16%;
+      }
+
+      @include mobile-small {
+        right: auto;
+        width: 100%;
+        margin-top: auto;
+      }
     }
   }
+
   .obj-circle {
     position: absolute;
     left: auto;
@@ -200,6 +446,7 @@
     bottom: auto;
     z-index: 998;
     width: 62.1em;
+
     &.circle1 {
       left: -35%;
       top: auto;
@@ -207,7 +454,12 @@
       bottom: 2%;
       z-index: 0;
     }
+
     &.circle2 {}
+
+    @include mobile-small {
+      display: none;
+    }
   }
 }
 
@@ -218,6 +470,7 @@
       margin-bottom: -2em;
       padding-bottom: 2em;
     }
+
     .ico-arrow-down {
       width: 64px;
       height: auto;
@@ -226,18 +479,38 @@
       -webkit-transform: rotate(137deg);
       -ms-transform: rotate(137deg);
       transform: rotate(137deg);
+
+      @include desktop {
+        width: 39px;
+      }
+
+      @include mobile-small {
+        width: 25px;
+        margin-top: 14px;
+      }
     }
   }
+
   .plan-list-wrap {
     display: flex;
     min-height: 100vh;
     overflow: hidden;
+
+    @include desktop {
+      min-height: 50em;
+    }
   }
+
   .plan-list {
     flex: 1;
     display: flex;
     overflow: hidden;
+
+    @include desktop {
+      flex-direction: column;
+    }
   }
+
   .plan-item {
     flex: 1;
     position: relative;
@@ -246,53 +519,118 @@
     align-self: end;
     height: 100%;
     overflow: hidden;
+
+    @include desktop {
+      width: 100%;
+      height: 83.6em;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex-basis: auto;
+    }
+
+    @include mobile-large {
+      height: 97.9em;
+    }
+
+    @include mobile-small {
+      height: 123vh;
+    }
+
     .thumb-box {
       position: absolute;
       display: flex;
       align-items: center;
       width: 100%;
       height: 100%;
+
+      @include desktop {
+        overflow: hidden;
+      }
+
       img {
         position: absolute;
         height: 120%;
         object-fit: cover;
+
+        @include mobile-small {
+          height: 105%;
+          object-position: 50% 50%;
+        }
       }
     }
+
     .info-box-wrap {
       position: relative;
       min-height: 28.5em;
       margin-bottom: 0;
       padding: 2.5em 2.4em;
-      background-color: rgba(23,22,22,.35);
+      background-color: rgba(23, 22, 22, .35);
       backdrop-filter: blur(5px);
+
+      @include desktop {
+        width: 100%;
+        padding-right: 5.9em;
+        padding-left: 5.9em;
+      }
+
+      @include mobile-large {
+        padding: 4.1em 4.8em;
+      }
+
+      @include mobile-small {
+        padding-bottom: 6.6em;
+      }
     }
+
     .info-box {
       position: relative;
+
+      @include desktop {
+        font-size: 2vw;
+      }
+
+      @include mobile-small {
+        font-size: 4vw;
+      }
+
       .num {
         overflow: hidden;
-        font-family: Voyage,sans-serif;
+        font-family: Voyage, sans-serif;
         color: #e08686;
         font-size: 1.5em;
         line-height: 1;
       }
+
       .title {
         margin-bottom: 0.5em;
         overflow: hidden;
+
         strong {
-          font-family: Voyage,sans-serif;
+          font-family: Voyage, sans-serif;
           font-size: 3em;
           font-weight: 400;
           line-height: 1;
         }
       }
+
       .desc {
-        font-family: 'Gt eesti text',sans-serif;
-        font-size: 1.1em;
         margin-bottom: 0.8em;
         opacity: .8;
-        display: inline-block;
-        font-family: 'Gt eesti text trial',sans-serif;
-        font-weight: 300;
+        font-size: 1.1em;
+
+        span {
+          font-family: 'Gt eesti text trial', sans-serif;
+          font-weight: 300;
+
+          @include desktop {
+            display: inline;
+            font-size: .9em;
+          }
+
+          @include mobile-small {
+            font-size: 1em;
+          }
+        }
       }
     }
   }
@@ -304,22 +642,51 @@
     margin-top: -1.4em;
     z-index: 1;
   }
-  .title-area {
-    .sc-title {}
-    .sc-sub-title {
-      span {}
-    }
-  }
+
   .story-list-wrap {
     max-width: 100vw;
     min-height: 100vh;
+
+    @include mobile-large {
+      min-height: 50em;
+    }
+
+    @include mobile-small {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
+
   .story-list {
     position: relative;
     padding-top: 20em;
     padding-bottom: 20em;
+
+    @include desktop {
+      height: 100%;
+      padding-top: 30.5em;
+      padding-bottom: 30.5em;
+    }
+
+    @include mobile-large {
+      padding-top: 38em;
+      padding-bottom: 38em;
+    }
+
+    @include mobile-small {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      margin-top: 7px;
+      padding-top: 78.1em;
+      padding-bottom: 78.1em;
+    }
   }
-  .story-item {}
+
   .story-area {
     display: flex;
     flex-direction: column;
@@ -328,6 +695,13 @@
     padding-top: 4.9em;
     padding-bottom: 4.9em;
     opacity: .81;
+
+    @include mobile-small {
+      position: static;
+      padding-top: 17.3em;
+      padding-bottom: 17.3em;
+    }
+
     .thumb-box {
       position: absolute;
       left: 0;
@@ -337,6 +711,11 @@
       height: 100vh;
       transition: opacity .6s;
       pointer-events: none;
+
+      @include desktop {
+        height: 100%;
+      }
+
       img {
         width: 100vw;
         height: 100vh;
@@ -344,8 +723,14 @@
         transform: scale(1);
         filter: brightness(80%);
         transition: transform 1.2s cubic-bezier(.215, .61, .355, 1);
+
+        @include desktop {
+          position: sticky;
+          top: 0;
+        }
       }
     }
+
     .info-box {
       position: relative;
       display: flex;
@@ -357,22 +742,14 @@
       transition: transform .8s cubic-bezier(.215, .61, .355, 1);
       z-index: 1;
     }
+
     .title-wrap {
       position: relative;
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      font-family: Voyage,sans-serif;
-      font-size: 5.3em;
-      line-height: 1;
-      text-align: center;
     }
-    .title, .title-view {
-      flex: 0 0 auto;
-      padding-bottom: 0.2em;
-      overflow: hidden;
-      transition: opacity .3s;
-    }
+
     .title {
       position: relative;
       display: block;
@@ -389,14 +766,36 @@
         font-weight: 400;
       }
     }
+
+    .title,
+    .title-view {
+      flex: 0 0 auto;
+      padding-bottom: 0.2em;
+      overflow: hidden;
+      font-family: Voyage, sans-serif;
+      font-size: 5.3em;
+      line-height: 1;
+      text-align: center;
+      transition: opacity .3s;
+
+      @include mobile-small {
+        width: auto;
+        font-size: 9.8em;
+      }
+    }
+
     .date {
       position: absolute;
       bottom: -1.3em;
-      font-family: 'Gt eesti text 2',sans-serif;
+      font-family: 'Gt eesti text 2', sans-serif;
       font-size: 1.5vw;
       font-weight: 300;
       letter-spacing: 2px;
       color: #d86f6f;
+
+      @include mobile-small {
+        font-size: 3vw;
+      }
     }
   }
 }
@@ -411,6 +810,15 @@
   min-height: 100vh;
   padding-top: 10em;
   padding-bottom: 10em;
+
+  @include desktop {
+    min-height: 72.4em;
+  }
+
+  @include mobile-large {
+    min-height: auto;
+  }
+
   .inner {
     position: relative;
     display: flex;
@@ -424,7 +832,23 @@
     margin-left: auto;
     padding: 0 2em;
     z-index: 1;
+
+    @include desktop {
+      padding-left: 0;
+    }
+
+    @include mobile-large {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    @include mobile-small {
+      width: 100vw;
+      padding-right: 5vw;
+      padding-left: 5vw;
+    }
   }
+
   .info-box-wrap {
     display: grid;
     grid-auto-columns: 1fr;
@@ -432,15 +856,45 @@
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 16px;
     grid-column-gap: 16px;
+
+    @include desktop {
+      grid-column-gap: 0px;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    @include mobile-large {
+      grid-template-columns: 1fr 0.25fr;
+    }
+
+    @include mobile-small {
+      grid-template-columns: 1fr;
+    }
   }
+
   .info-box {
     padding-top: 5em;
     padding-bottom: 5em;
+
+    @include desktop {
+      font-size: .8vw;
+    }
+
+    @include mobile-large {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    @include mobile-small {
+      margin-top: 17px;
+      font-size: 1vw;
+    }
   }
+
   .sc-sub-title {
     position: relative;
     z-index: 1;
     margin-top: 1em;
+
     h3 {
       .row {
         display: inline-block;
@@ -449,38 +903,65 @@
         padding-bottom: 0.2em;
         margin-top: 0;
         margin-bottom: -0.25em;
-        font-family: Voyage,sans-serif;
+        font-family: Voyage, sans-serif;
         font-size: 4.6em;
         font-weight: 200;
         line-height: 1;
         overflow: hidden;
+
+        @include desktop {
+          padding-bottom: 0.3em;
+          font-size: 7em;
+        }
+
+        @include mobile-small {
+          font-size: 10.7em;
+        }
+
         &:nth-child(1) {
           margin-bottom: -0.05em;
         }
+
         &:nth-child(2) {
           margin-top: -0.4em;
           margin-bottom: -0.35em;
           padding-top: 0.1em;
           padding-bottom: 0.5em;
-        }
-        span {
 
+          @include desktop {
+            margin-top: -0.35em;
+          }
         }
       }
     }
   }
+
   .desc {
     margin-top: 0;
     margin-bottom: 0.8em;
     opacity: .8;
     font-size: 1.1em;
     line-height: 1.5;
-    span {}
+
+    @include desktop {
+      font-size: 2em;
+    }
+
+    @include mobile-large {
+      font-size: 2.3em;
+    }
+
+    @include mobile-small {
+      font-size: 4.4em;
+    }
   }
+
   .link-shortcut {
     span {}
+
     .ico-shortcut {}
   }
+
   .thumb-wrap {
     position: absolute;
     left: auto;
@@ -493,6 +974,17 @@
     width: 50vw;
     overflow: hidden;
     z-index: 1;
+
+    @include mobile-large {
+      width: 40vw;
+    }
+
+    @include mobile-small {
+      position: relative;
+      width: 100%;
+      order: -1;
+    }
+
     .thumb-dim {
       position: absolute;
       left: 0;
@@ -502,6 +994,7 @@
       background-color: #171616;
     }
   }
+
   .thumb-back {
     position: absolute;
     left: auto;
@@ -513,16 +1006,39 @@
     opacity: .55;
     filter: grayscale(100%);
     z-index: 1;
+
+    @include desktop {
+      width: 33vw;
+    }
+
+    @include mobile-large {
+      display: none;
+    }
+
     img {
       height: 100%;
       object-fit: cover;
     }
   }
+
   .thumb-front {
     padding-left: 11.2em;
     transform-origin: 0% 50%;
     mix-blend-mode: lighten;
     z-index: 2;
+
+    @include desktop {
+      padding-left: 12.9em;
+    }
+
+    @include mobile-large {
+      padding-left: 12.2em;
+    }
+
+    @include mobile-small {
+      padding-left: 0;
+    }
+
     img {
       position: relative;
       width: 29vw;
@@ -530,7 +1046,14 @@
       object-fit: cover;
       object-position: 0% 50%;
       mix-blend-mode: normal;
+
+      @include mobile-small {
+        width: 100vw;
+        max-width: none;
+        height: 150.4em;
+      }
     }
+
     .name {
       display: block;
       opacity: .63;
@@ -540,8 +1063,15 @@
 
 // contact
 .sc-contact {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
+
+  @include mobile-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .title-area {
     position: relative;
     display: flex;
@@ -550,11 +1080,21 @@
     width: 100%;
     height: 100%;
     padding: 10em 5em 10em 0.3em;
+
+    @include mobile-large {
+      padding-top: 23.9em;
+      padding-bottom: 23.9em;
+    }
+
+    @include mobile-small {
+      padding: 25.8em 3em;
+    }
   }
+
   .title {
     display: inline-block;
     max-width: 100%;
-    font-family: Voyage,sans-serif;
+    font-family: Voyage, sans-serif;
     font-size: 12em;
     color: #fff6f2;
     line-height: 1;
@@ -562,11 +1102,19 @@
     margin-bottom: -0.1em;
     white-space: nowrap;
     overflow: hidden;
+
+    @include mobile-small {
+      font-size: 12.8em;
+    }
+
     a {
       display: flex;
+      flex-wrap: wrap;
+
       span {}
     }
   }
+
   .link-contact {
     position: relative;
     left: 59px;
@@ -577,6 +1125,17 @@
     width: 10em;
     height: 10em;
     transition: 1.5s cubic-bezier(.25, .46, .45, .94) .6s;
+
+    @include mobile-large {
+      left: 14px;
+    }
+
+    @include mobile-small {
+      left: 0;
+      width: 15em;
+      height: 15em;
+    }
+
     .rotate {
       position: absolute;
       left: 0;
@@ -584,8 +1143,14 @@
       right: 0;
       bottom: 0;
       cursor: pointer;
+
+      @include mobile-small {
+        display: none;
+      }
+
       img {}
     }
+
     .circle {
       flex: 0 0 auto;
       position: relative;
@@ -601,8 +1166,9 @@
       height: 60%;
       border-radius: 50%;
       background-color: #d86f6f;
-      transition: transform .5s,opacity .2s,bottom 1s cubic-bezier(.25, .46, .45, .94),-webkit-transform .5s;
+      transition: transform .5s, opacity .2s, bottom 1s cubic-bezier(.25, .46, .45, .94), -webkit-transform .5s;
       cursor: pointer;
+
       .ico-arrow-b {
         width: 50%;
         height: 50%;

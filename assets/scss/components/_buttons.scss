@@ -4,11 +4,24 @@
   overflow: hidden;
   margin-top: 0.5em;
   padding-right: 0.8em;
-  font-family: Voyage,sans-serif;
+  font-family: Voyage, sans-serif;
   font-size: 4.4em;
   line-height: 1;
   color: snow;
-  
+
+  @include mobile-large {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  @include mobile-small {
+    padding-right: 0;
+    justify-content: flex-start;
+    font-size: 9.5em;
+  }
+
   .ico-shortcut {
     position: absolute;
     left: auto;
@@ -19,5 +32,17 @@
     height: 0.6em;
     background-image: url("../images/icon/ico_shortcut.svg");
     background-size: cover;
+
+    @include mobile-large {
+      position: relative;
+      bottom: auto;
+      margin-left: 7px;
+    }
+
+    &.abs {
+      @include mobile-large {
+        display: none;
+      }
+    }
   }
 }

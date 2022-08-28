@@ -2,6 +2,7 @@
 #footer {
   position: relative;
   z-index: 1;
+
   .inner {
     width: 100%;
     height: 100%;
@@ -9,31 +10,72 @@
     padding-right: 8em;
     padding-top: 1.7em;
     padding-bottom: 2em;
+
+    @include mobile-large {
+      padding-right: 12.1em;
+      padding-left: 12.1em;
+    }
+
+    @include mobile-small {
+      padding-left: 5.3em;
+      padding-right: 5.3em;
+    }
   }
+
   .group-nav {
     display: flex;
     justify-content: space-between;
+
+    @include mobile-large {
+      flex-direction: column;
+    }
   }
+
   .nav-area {
+
+    @include mobile-large {
+      text-align: center;
+
+      &+.nav-area {
+        margin-top: 50px;
+      }
+    }
+
     .title {
       margin-bottom: 0.5em;
-      font-family: Voyage,sans-serif;
+      font-family: Voyage, sans-serif;
       font-size: 3.9em;
       font-weight: 400;
       line-height: 1;
       color: #fff6f2;
+
+      @include mobile-large {
+        font-size: 4.3em;
+      }
+
+      @include mobile-small {
+        margin-top: 21px;
+        margin-bottom: 0.3em;
+        font-size: 7.5em;
+      }
     }
 
     &:nth-child(2) {
       .nav-list {
         align-items: flex-end;
+
+        @include mobile-large {
+          align-items: center;
+        }
       }
     }
   }
+
   .nav-list {
     display: flex;
     flex-direction: column;
   }
+
   .nav-item {
     margin-top: 0.8em;
     font-size: 1.2em;
@@ -41,10 +83,28 @@
     text-transform: uppercase;
     overflow: hidden;
     transition: color .4s;
+
     &:hover {
       color: #ec8383;
     }
+
+    @include desktop {
+      font-family: 'Gt eesti display trial', sans-serif;
+      font-size: 1.7em;
+      font-weight: 200;
+    }
+
+    @include mobile-large {
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+      font-size: 3em;
+    }
+
+    @include mobile-small {
+      font-size: 4.7em;
+    }
   }
+
   .link-nav {
     position: relative;
     display: block;
@@ -52,13 +112,40 @@
     padding-bottom: 0.1em;
     transition: top 1s cubic-bezier(.25, .46, .45, .94);
   }
+
   .copyright {
-    font-family: 'Gt eesti text',sans-serif;
+    font-family: 'Gt eesti text', sans-serif;
     font-size: 1.1em;
     text-align: center;
     opacity: .8;
+
+    @include desktop {
+      font-size: 1em;
+    }
+
+    @include mobile-large {
+      margin-top: 2em;
+    }
+
+    @include mobile-small {
+      font-size: 2.5em;
+    }
+
     a {
       display: block;
+
+      @include desktop {
+        font-size: 2vw;
+      }
+
+      @include mobile-small {
+        font-size: 1.5vw;
+      }
+    }
+
+    @include mobile-small {
+      margin-top: 32px;
+      margin-bottom: 30px;
     }
   }
 }

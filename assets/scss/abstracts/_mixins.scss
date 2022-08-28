@@ -1,0 +1,32 @@
+// media query
+@mixin desktop {
+
+  // 991px
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+
+  // 768px
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-large {
+
+  // 767px
+  @media (max-width: $mobile-large) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+
+  // 479px
+  @media (max-width: $mobile-small) {
+    @content;
+  }
+}

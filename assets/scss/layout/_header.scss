@@ -24,37 +24,43 @@
 
   .logo-area {
     position: relative;
+
     margin: {
       left: auto;
       right: auto;
     }
+
     transition: .4s;
-    
+
     @include desktop {
       position: absolute;
       top: 0;
       font-size: 2vw;
     }
-    
+
     @include mobile-small {
       font-size: 4vw;
     }
   }
+
   .logo {
     a {
       display: flex;
       flex-direction: column;
       text-align: center;
+
       padding: {
         top: 10px;
         bottom: 10px;
       }
+
       em {
         font: {
-          family: Voyage,sans-serif;
+          family: Voyage, sans-serif;
           size: 5.2vw;
           weight: 400;
         }
+
         line-height: .9;
 
         @include desktop {
@@ -65,11 +71,13 @@
           font-size: 14vw;
         }
       }
+
       span {
         font: {
           size: .7vw;
           weight: 300;
         }
+
         letter-spacing: 2px;
         text-transform: uppercase;
 
@@ -87,6 +95,7 @@
       }
     }
   }
+
   .btn-nav {
     position: relative;
     z-index: 10;
@@ -119,6 +128,7 @@
       margin-top: 2.8em;
       padding: 13px;
     }
+
     svg {
       width: 100%;
       height: 100%;
@@ -133,22 +143,48 @@
   z-index: 9;
   width: 100%;
   height: 100vh;
-  flex-direction: column;
-  display: none;
+  pointer-events: none;
+  overflow-y: auto;
+
   &.open {
-    display: flex;
+    pointer-events: auto;
   }
 
   @include desktop {
-    right: 0;
-    height: 100%;
+    // right: 0;
+    // height: 100%;
   }
 
   @include mobile-small {
-    top: -10vh;
-    height: 74%;
+    // top: -10vh;
+    // height: 74%;
   }
+
   .gnb-item {
+    &:nth-child(1) {
+      transform: translateY(0);
+    }
+
+    &:nth-child(2) {
+      transform: translateY(-33.3333vh);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-50vh);
+    }
+
+    &:nth-child(4) {
+      transform: translateY(-66.6667vh);
+    }
+
+    &:nth-child(5) {
+      transform: translateY(-83.3333vh);
+    }
+
+    &:nth-child(6) {
+      transform: translateY(-100vh);
+    }
+
     &:nth-child(1) .link-gnb {
       flex: 1;
       background: #363636;
@@ -162,28 +198,34 @@
         }
       }
     }
+
     &:nth-child(2) .link-gnb {
       background: #242424;
       z-index: 5;
     }
+
     &:nth-child(3) .link-gnb {
       background: #1d1d1d;
       box-shadow: 0 4px 9px 0 #000;
       z-index: 4;
     }
+
     &:nth-child(4) .link-gnb {
       background: #181818;
       z-index: 3;
     }
+
     &:nth-child(5) .link-gnb {
       background: #141414;
       z-index: 2;
     }
+
     &:nth-child(6) .link-gnb {
       background: #0f0f0f;
       z-index: 1;
     }
   }
+
   .link-gnb {
     position: relative;
     display: flex;
@@ -192,10 +234,12 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 9px 0 #000;
+
     font: {
-      family: Voyage,sans-serif;
+      family: Voyage, sans-serif;
       size: 10vh;
     }
+
     // transform: translateY(-33.3333vh) scale3d(1, 1, 1);
     transform-style: preserve-3d;
     transition: color .2s;
@@ -205,7 +249,7 @@
     }
 
     @include desktop {
-      height: 15vh;
+      // height: 15vh;
       flex: 1;
       background-color: #242424;
       box-shadow: 0 4px 20px 0 #000;
@@ -216,7 +260,7 @@
     }
 
     @include mobile-small {
-      height: 12vh;
+      // height: 12vh;
       font-size: 12vw;
     }
   }

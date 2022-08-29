@@ -942,14 +942,11 @@
       margin-top: 17px;
       font-size: 1vw;
     }
-  }
-
-  .sc-sub-title {
-    position: relative;
-    z-index: 1;
-    margin-top: 1em;
-
-    h3 {
+    .title {
+      position: relative;
+      z-index: 1;
+      margin-top: 1em;
+      
       .row {
         display: block;
         padding: {
@@ -968,20 +965,20 @@
         }
         line-height: 1;
         overflow: hidden;
-
+  
         @include desktop {
           padding-bottom: 0.3em;
           font-size: 7em;
         }
-
+  
         @include mobile-small {
           font-size: 10.7em;
         }
-
+  
         &:nth-child(1) {
           margin-bottom: -0.05em;
         }
-
+  
         &:nth-child(2) {
           margin: {
             top: -0.4em;
@@ -991,38 +988,37 @@
             top: 0.1em;
             bottom: 0.5em;
           }
-
+  
           @include desktop {
             margin-top: -0.35em;
           }
         }
       }
     }
-  }
-
-  .desc {
-    margin: {
-      top: 0;
-      bottom: 0.8em;
-    }
-    opacity: .8;
-    font-size: 1.1em;
-    line-height: 1.5;
-
-    @include desktop {
-      font-size: 2em;
-    }
-
-    @include mobile-large {
-      font-size: 2.3em;
-    }
-
-    @include mobile-small {
-      font-size: 4.4em;
-    }
-
-    em {
-      font-style: italic;
+    .desc {
+      margin: {
+        top: 0;
+        bottom: 0.8em;
+      }
+      opacity: .8;
+      font-size: 1.1em;
+      line-height: 1.5;
+  
+      @include desktop {
+        font-size: 2em;
+      }
+  
+      @include mobile-large {
+        font-size: 2.3em;
+      }
+  
+      @include mobile-small {
+        font-size: 4.4em;
+      }
+  
+      em {
+        font-style: italic;
+      }
     }
   }
 

@@ -244,7 +244,8 @@
     transform-style: preserve-3d;
     transition: color .2s;
 
-    &:hover {
+    &:hover,
+    &.selected {
       color: #d86f6f;
     }
 

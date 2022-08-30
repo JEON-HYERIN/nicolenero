@@ -33,10 +33,12 @@
       top: auto;
       right: 0;
       bottom: 16%;
+
       margin: {
         right: auto;
         left: auto;
       }
+
       text-align: left;
       font-size: 1vw;
     }
@@ -45,11 +47,13 @@
   .title {
     position: relative;
     z-index: 1;
+
     font: {
       family: 'Gt eesti text', sans-serif;
       size: 1.5em;
       weight: 300;
     }
+
     line-height: 1;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -79,11 +83,13 @@
     margin-bottom: -28px;
     padding-bottom: 25px;
     overflow: hidden;
+
     font: {
       family: Voyage, sans-serif;
       size: 9.5em;
       weight: 200;
     }
+
     line-height: 1;
 
     @include desktop {
@@ -118,6 +124,7 @@
       left: 0.9em;
       right: 0.9em;
     }
+
     font-size: 2.3em;
 
     @include desktop {
@@ -241,16 +248,20 @@
   .title-box-wrap {
     .title {
       overflow: hidden;
+
       margin: {
         top: 0;
         bottom: -0.25em;
       }
+
       padding-bottom: 0.2em;
+
       font: {
         family: Voyage, sans-serif;
         size: 5.3em;
         weight: 200;
       }
+
       line-height: 1;
       opacity: 0;
       transition: opacity 1s;
@@ -263,13 +274,14 @@
       @include mobile-small {
         padding-bottom: 0.1em;
         font-size: 9.7em;
+        opacity: 1;
       }
 
       &.fadein {
         opacity: 1;
 
         @include mobile-small {
-          font-size: 9.1em;
+          // font-size: 9.1em;
         }
       }
     }
@@ -585,6 +597,7 @@
 
       @include desktop {
         width: 100%;
+
         padding: {
           left: 5.9em;
           right: 5.9em;
@@ -613,10 +626,12 @@
 
       .num {
         overflow: hidden;
+
         font: {
           family: Voyage, sans-serif;
           size: 1.5em;
         }
+
         color: #e08686;
         line-height: 1;
       }
@@ -631,6 +646,7 @@
             size: 3em;
             weight: 400;
           }
+
           line-height: 1;
         }
       }
@@ -685,6 +701,7 @@
 
   .story-list {
     position: relative;
+
     padding: {
       top: 20em;
       bottom: 20em;
@@ -692,6 +709,7 @@
 
     @include desktop {
       height: 100%;
+
       padding: {
         top: 30.5em;
         bottom: 30.5em;
@@ -712,6 +730,7 @@
       width: 100%;
       height: auto;
       margin-top: 7px;
+
       padding: {
         top: 78.1em;
         bottom: 78.1em;
@@ -724,14 +743,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     padding: {
       top: 4.9em;
       bottom: 4.9em;
     }
+
     opacity: .81;
 
     @include mobile-small {
       position: static;
+
       padding: {
         top: 17.3em;
         bottom: 17.3em;
@@ -797,10 +819,12 @@
         position: absolute;
         bottom: -100%;
         width: 5.7em;
+
         margin: {
           left: auto;
           right: auto;
         }
+
         font-weight: 400;
       }
     }
@@ -810,10 +834,12 @@
       flex: 0 0 auto;
       padding-bottom: 0.2em;
       overflow: hidden;
+
       font: {
         family: Voyage, sans-serif;
         size: 5.3em;
       }
+
       line-height: 1;
       text-align: center;
       transition: opacity .3s;
@@ -827,11 +853,13 @@
     .date {
       position: absolute;
       bottom: -1.3em;
+
       font: {
         family: 'Gt eesti text 2', sans-serif;
         size: 1.5vw;
         weight: 300;
       }
+
       letter-spacing: 2px;
       color: #d86f6f;
 
@@ -850,6 +878,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+
   padding: {
     top: 10em;
     bottom: 10em;
@@ -872,10 +901,12 @@
     flex: 1;
     width: 95vw;
     height: 100%;
+
     margin: {
       left: auto;
       right: auto;
     }
+
     padding: 0 2em;
     z-index: 1;
 
@@ -892,6 +923,7 @@
 
     @include mobile-small {
       width: 100vw;
+
       padding: {
         left: 5vw;
         right: 5vw;
@@ -942,80 +974,88 @@
       margin-top: 17px;
       font-size: 1vw;
     }
+
     .title {
       position: relative;
       z-index: 1;
       margin-top: 1em;
-      
+
       .row {
         display: block;
+
         padding: {
           left: 0.1em;
           right: 0.1em;
           bottom: 0.2em;
         }
+
         margin: {
           top: 0;
           bottom: -0.25em;
         }
+
         font: {
           family: Voyage, sans-serif;
           size: 4.6em;
           weight: 200;
         }
+
         line-height: 1;
         overflow: hidden;
-  
+
         @include desktop {
           padding-bottom: 0.3em;
           font-size: 7em;
         }
-  
+
         @include mobile-small {
           font-size: 10.7em;
         }
-  
+
         &:nth-child(1) {
           margin-bottom: -0.05em;
         }
-  
+
         &:nth-child(2) {
           margin: {
             top: -0.4em;
             bottom: -0.35em;
           }
+
           padding: {
             top: 0.1em;
             bottom: 0.5em;
           }
-  
+
           @include desktop {
             margin-top: -0.35em;
           }
         }
       }
     }
+
     .desc {
       margin: {
         top: 0;
         bottom: 0.8em;
       }
+
       opacity: .8;
       font-size: 1.1em;
       line-height: 1.5;
-  
+
       @include desktop {
         font-size: 2em;
       }
-  
+
       @include mobile-large {
         font-size: 2.3em;
       }
-  
+
       @include mobile-small {
         font-size: 4.4em;
       }
-  
+
       em {
         font-style: italic;
       }
@@ -1157,10 +1197,12 @@
   .title {
     display: inline-block;
     max-width: 100%;
+
     font: {
       family: Voyage, sans-serif;
       size: 12em;
     }
+
     color: #fff6f2;
     line-height: 1;
     position: relative;
@@ -1187,7 +1229,7 @@
     align-items: center;
     width: 10em;
     height: 10em;
-    transition: 1.5s cubic-bezier(.25, .46, .45, .94) .6s;
+    // transition: 1.5s cubic-bezier(.25, .46, .45, .94) .6s;
 
     @include mobile-large {
       left: 14px;
@@ -1206,9 +1248,16 @@
       right: 0;
       bottom: 0;
       cursor: pointer;
+      animation: rotate-circle 20s linear infinite;
 
       @include mobile-small {
         display: none;
+      }
+    }
+
+    @keyframes rotate-circle {
+      100% {
+        transform: rotate(360deg);
       }
     }
 
@@ -1230,6 +1279,11 @@
       transition: transform .5s, opacity .2s, bottom 1s cubic-bezier(.25, .46, .45, .94), -webkit-transform .5s;
       cursor: pointer;
 
+      &:hover {
+        filter: brightness(200%) grayscale(100%);
+        transform: scale(2) rotate(43deg);
+      }
+
       .ico-arrow-b {
         width: 50%;
         height: 50%;
@@ -1237,5 +1291,24 @@
         background-size: cover;
       }
     }
+  }
+}
+
+// custom-cursor
+.custom-cursor {
+  position: fixed;
+  height: 1.5rem;
+  width: 1.5rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff6f2;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  opacity: 0;
+  visibility: visible;
+  z-index: 100;
+
+  @media (max-width: 1023px) {
+    visibility: hidden;
   }
 }

@@ -4,19 +4,24 @@ $(function(){
       e.preventDefault();
     });
 
-    // header
-    // if($('.btn-nav').hasClass('on')){
-    //   return;
-    // } else {
-    //   $('#gnb .gnb-item').each(function(){
-    //     const length = $('#gnb .gnb-item').length;
-    //     const index = $(this).index();
-    //     for(i=1;i<=$('#gnb .gnb-item').length;i++) {
-    //       $(this).index().css({"transform":"translateY((-17*2) + 'vh')"});
-    //     }
-    //   });
-    // }
+    // loading
+    const loading = gsap.timeline({
+        defaults: {
+          duration: 2
+        },
+        paused: true
+      })
+      .addLabel('a')
+      .from('.loading .title', {
+        opacity: 1
+      }, 'a')
+      .set('.loading', {
+        display: 'none'
+      })
 
+    loading.play();
+
+    // header
     const body = document.querySelector('body');
     let scrollPosition = 0;
     $('.btn-nav').click(function(){
@@ -26,7 +31,7 @@ $(function(){
         // enable();
         const tl = gsap.timeline({
           defaults: {
-            duration: 1
+            duration: 1.5
           }
         });
         tl.addLabel('t1')
@@ -43,7 +48,7 @@ $(function(){
         // disable();
         const tl = gsap.timeline({
           defaults: {
-            duration: 1
+            duration: 1.5
           }
         });
         tl.addLabel('t1')
@@ -88,7 +93,7 @@ $(function(){
     // visual
     const visualTl1 = gsap.timeline({
       defaults: {
-        delay: 0.2,
+        delay: 2,
         duration: 0.8
       },
       scrollTrigger:{
@@ -99,7 +104,7 @@ $(function(){
     .fromTo('.sc-visual .bg img',{filter: 'saturate(0%)', transform: 'scale3d(1.05, 1.05, 1)'},{filter: 'saturate(100%)', transform: 'scale3d(1, 1, 1)', duration: 1.5},'t1')
     .fromTo('.sc-visual .title',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0,},'t1+=0.8')
     .fromTo('.sc-visual .desc span',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2},'t1+=1')
-    .fromTo('.sc-visual .link-shortcut',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .1},'t1+=2.4')
+    .fromTo('.sc-visual .link-shortcut',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2},'t1+=2.4')
 
     // gallery
     ScrollTrigger.saveStyles('.sc-gallery .gallery');
@@ -123,9 +128,9 @@ $(function(){
           }
         })
         tl.addLabel('t1')
-        .fromTo('.sc-gallery .gallery1', {y:0}, {y:-100}, 't1')
-        .fromTo('.sc-gallery .gallery2', {y:0}, {y:-250}, 't1')
-        .fromTo('.sc-gallery .gallery3', {y:0}, {y:-100}, 't1')
+        .fromTo('.sc-gallery .gallery1', {yPercent:0}, {yPercent:-10}, 't1')
+        .fromTo('.sc-gallery .gallery2', {yPercent:0}, {yPercent:-25}, 't1')
+        .fromTo('.sc-gallery .gallery3', {yPercent:0}, {yPercent:-10}, 't1')
         const tl2 = gsap.timeline({
           defaults: {
             duration: .8
@@ -141,9 +146,9 @@ $(function(){
           }
         })
         tl2.addLabel('t1')
-        .fromTo('.sc-gallery .gallery4', {y:0}, {y:100}, 't1')
-        .fromTo('.sc-gallery .gallery5', {y:0}, {y:250}, 't1')
-        .fromTo('.sc-gallery .gallery6', {y:0}, {y:100}, 't1')
+        .fromTo('.sc-gallery .gallery4', {yPercent:0}, {yPercent:10}, 't1')
+        .fromTo('.sc-gallery .gallery5', {yPercent:0}, {yPercent:25}, 't1')
+        .fromTo('.sc-gallery .gallery6', {yPercent:0}, {yPercent:10}, 't1')
         // $('.sc-gallery .gallery').each(function(index, element) {
         //   const anim = gsap.to(element, {
         //     scrollTrigger: {
@@ -255,41 +260,91 @@ $(function(){
 
     const titleArea1 = gsap.timeline({
       defaults: {
-        // duration: .8
+        duration: .8
       },
       scrollTrigger:{
-        trigger: '.sc-plan .headline-area-wrap',
-        // start:'top top',
-        // end:'+=100%',
+        trigger: '.sc-plan',
+        start:'-30% top',
+        end:'+=100%',
         // markers:true,
-        // toggleActions: 'restart none reverse none'
+        toggleActions: 'restart none reverse none'
       },
     })
     titleArea1.addLabel('t1')
     .fromTo('.sc-plan .sc-title span',{yPercent: -100},{yPercent: 0, duration: .8},'t1')
-    .fromTo('.sc-plan .sc-sub-title .txt-wrap span',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2, duration: .6},'t1+=.4')
+    .fromTo('.sc-plan .sc-sub-title .txt-wrap span',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2, duration: .65},'t1+=.4')
 
     ScrollTrigger.saveStyles('.sc-plan .plan-item .num span');
     ScrollTrigger.saveStyles('.sc-plan .plan-item .title strong');
     ScrollTrigger.saveStyles('.sc-plan .plan-item .desc span');
     ScrollTrigger.matchMedia({
       "(min-width: 992px)": function(){
-        const planListTl = gsap.timeline({
+        // const planListTl = gsap.timeline({
+        //   defaults: {
+        //     duration: .8
+        //   },
+        //   scrollTrigger:{
+        //     trigger: '.sc-plan .plan-item',
+        //     start:'bottom 100%',
+        //     // end:'+=100%',
+        //     // markers:true,
+        //     // toggleActions: 'restart none reverse none'
+        //   },
+        // })
+        // planListTl.addLabel('t1')
+        // .fromTo('.sc-plan .plan-item .num span',{yPercent: -120, opacity: 0},{yPercent: 0,opacity: 1},'t1')
+        // .fromTo('.sc-plan .plan-item .title strong',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1},'t1+=.2')
+        // .fromTo('.sc-plan .plan-item .desc span',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1,stagger: 0.01,},'t1+=.4')
+        const planListTl1 = gsap.timeline({
           defaults: {
             duration: .8
           },
           scrollTrigger:{
-            trigger: '.sc-plan .plan-item',
+            trigger: '.sc-plan .plan-item.item1',
             start:'bottom 100%',
-            // end:'+=100%',
+            end:'+=100%',
             // markers:true,
-            // toggleActions: 'restart none reverse none'
+            toggleActions: 'restart none reverse none'
           },
         })
-        planListTl.addLabel('t1')
-        .fromTo('.sc-plan .plan-item .num span',{yPercent: -120, opacity: 0},{yPercent: 0,opacity: 1},'t1')
-        .fromTo('.sc-plan .plan-item .title strong',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1},'t1+=.2')
-        .fromTo('.sc-plan .plan-item .desc span',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1,stagger: 0.01,},'t1+=.4')
+        planListTl1.addLabel('t1')
+        .fromTo('.sc-plan .plan-item.item1 .num span',{yPercent: -120, opacity: 0},{yPercent: 0,opacity: 1},'t1')
+        .fromTo('.sc-plan .plan-item.item1 .title strong',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1},'t1+=.3')
+        .fromTo('.sc-plan .plan-item.item1 .desc span',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1,stagger: 0.01,},'t1+=.6')
+        const planListTl2 = gsap.timeline({
+          defaults: {
+            duration: .8,
+            delay: .3
+          },
+          scrollTrigger:{
+            trigger: '.sc-plan .plan-item.item2',
+            start:'bottom 100%',
+            end:'+=100%',
+            // markers:true,
+            toggleActions: 'restart none reverse none'
+          },
+        })
+        planListTl2.addLabel('t1')
+        .fromTo('.sc-plan .plan-item.item2 .num span',{yPercent: -120, opacity: 0},{yPercent: 0,opacity: 1},'t1')
+        .fromTo('.sc-plan .plan-item.item2 .title strong',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1},'t1+=.2')
+        .fromTo('.sc-plan .plan-item.item2 .desc span',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1,stagger: 0.01,},'t1+=.4')
+        const planListTl3 = gsap.timeline({
+          defaults: {
+            duration: .8,
+            delay: .6
+          },
+          scrollTrigger:{
+            trigger: '.sc-plan .plan-item.item3',
+            start:'bottom 100%',
+            end:'+=100%',
+            // markers:true,
+            toggleActions: 'restart none reverse none'
+          },
+        })
+        planListTl3.addLabel('t1')
+        .fromTo('.sc-plan .plan-item.item3 .num span',{yPercent: -120, opacity: 0},{yPercent: 0,opacity: 1},'t1')
+        .fromTo('.sc-plan .plan-item.item3 .title strong',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1},'t1+=.2')
+        .fromTo('.sc-plan .plan-item.item3 .desc span',{yPercent: 100, opacity: 0},{yPercent: 0,opacity: 1,stagger: 0.01,},'t1+=.4')
       },
       "(max-width: 991px)": function(){
         const planListTl1 = gsap.timeline({
@@ -298,10 +353,10 @@ $(function(){
           },
           scrollTrigger:{
             trigger: '.sc-plan .plan-item.item1',
-            start:'bottom 100%',
-            // end:'+=100%',
+            start:'bottom 70%',
+            end:'+=100%',
             // markers:true,
-            // toggleActions: 'restart none reverse none'
+            toggleActions: 'restart none reverse none'
           },
         })
         planListTl1.addLabel('t1')
@@ -314,10 +369,10 @@ $(function(){
           },
           scrollTrigger:{
             trigger: '.sc-plan .plan-item.item2',
-            start:'bottom 100%',
-            // end:'+=100%',
+            start:'bottom 70%',
+            end:'+=100%',
             // markers:true,
-            // toggleActions: 'restart none reverse none'
+            toggleActions: 'restart none reverse none'
           },
         })
         planListTl2.addLabel('t1')
@@ -330,10 +385,10 @@ $(function(){
           },
           scrollTrigger:{
             trigger: '.sc-plan .plan-item.item3',
-            start:'bottom 100%',
-            // end:'+=100%',
+            start:'bottom 70%',
+            end:'+=100%',
             // markers:true,
-            // toggleActions: 'restart none reverse none'
+            toggleActions: 'restart none reverse none'
           },
         })
         planListTl3.addLabel('t1')
@@ -346,19 +401,19 @@ $(function(){
     // story
     const titleArea2 = gsap.timeline({
       defaults: {
-        // duration: .8
+        duration: .8
       },
       scrollTrigger:{
-        trigger: '.sc-story .story-list-wrap',
-        start:'top top',
-        // end:'+=100%',
+        trigger: '.sc-story .story-list',
+        start:'top 70%',
+        end:'+=100%',
         // markers:true,
-        // toggleActions: 'restart none reverse none'
+        toggleActions: 'restart none reverse none'
       },
     })
     titleArea1.addLabel('t1')
     .fromTo('.sc-story .sc-title span',{yPercent: -100},{yPercent: 0, duration: .8},'t1')
-    .fromTo('.sc-story .sc-sub-title .txt-wrap span',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2, duration: .6},'t1+=.4')
+    .fromTo('.sc-story .sc-sub-title .txt-wrap span',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0, stagger: .2, duration: .65},'t1+=.4')
     
     // intro
     const introTl = gsap.timeline({
@@ -367,8 +422,8 @@ $(function(){
       },
       scrollTrigger:{
         trigger: '.sc-intro .info-box-wrap',
-        start:'top 70%',
-        // end:'+=100%',
+        start:'top 50%',
+        end:'+=100%',
         // markers:true,
         // toggleActions: 'restart none reverse none'
       },
@@ -387,9 +442,9 @@ $(function(){
       scrollTrigger:{
         trigger: '.sc-contact',
         start:'top 60%',
-        // end:'+=100%',
+        end:'+=100%',
         // markers:true,
-        // toggleActions: 'restart none reverse none'
+        toggleActions: 'restart none reverse none'
       },
     })
     contactTl.addLabel('t1')
